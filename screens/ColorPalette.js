@@ -2,8 +2,7 @@ import React from 'react';
 import {
     FlatList,
     SafeAreaView,
-    StyleSheet,
-    Text
+    StyleSheet
 } from 'react-native';
 import ColorBox from '../components/ColorBox';
 
@@ -11,13 +10,13 @@ const ColorPalette = ({ route }) => {
     const { colors } = route.params;
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.container}>
             <FlatList
-                ItemSeparatorComponent={({ highlighted }) => (
-                    <Text>----------</Text>
-                    // <View style={[styles.item, highlighted && { marginLeft: 0 }]} />
-                )}
-                style={styles.container}
+                // ItemSeparatorComponent={({ highlighted }) => (
+                //     <Text>----------</Text>
+                //     // <View style={[styles.item, highlighted && { marginLeft: 0 }]} />
+                // )}
+                style={styles.colorList}
                 data={colors}
                 keyExtractor={item => item.colorName}
                 renderItem={({ item }) => (
@@ -31,7 +30,11 @@ const ColorPalette = ({ route }) => {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 50,
+        flex: 1
+    },
+    colorList: {
+        flex: 1,
+        marginTop: 30,
         paddingHorizontal: 10,
         backgroundColor: 'white'
     },
