@@ -62,7 +62,9 @@ const Home = ({ navigation, route }) => {
                     navigation.navigate('ColorPaletteModal')
                 }}>
                     <Text style={styles.buttonText}>Add a color scheme</Text>
-                </TouchableOpacity>}
+                </TouchableOpacity>
+                }
+            showsVerticalScrollIndicator={false}
         />
     );
 };
